@@ -1,0 +1,204 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+.main {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+span {
+  margin: 0 15px;
+}
+.bg {
+  width: 67%;
+  position: relative;
+}
+.tb {
+  width: 33%;
+  display: flex;
+  flex-direction: column;
+}
+.ft {
+  position: absolute;
+  display: none;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 24px;
+  font-weight: 500;
+  bottom: 2%;
+  left: 2%;
+  margin-left: 33%;
+  width: 63%;
+  height: 10%;
+  display: flex;
+  flex-direction: column;
+  background-color: beige;
+  opacity: 0.8;
+}
+.tb button {
+  width: 100%;
+  height: 20%;
+  border: none;
+  cursor: pointer;
+  font-size: xx-large;
+  font-weight: 500;
+}
+.tb button:hover {
+  background-color: rgb(112, 112, 116);
+  color: beige;
+}
+#carousell {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  overflow: hidden;
+}
+.galery,
+#terms,
+#leftTab {
+  position: absolute;
+  border-radius: 15px;
+  font-size: large;
+  font-weight: 500;
+  left: 5%;
+  top: 18%;
+  display: none;
+  padding: 5px;
+  height: 80%;
+  width: 90%;
+  background-color: beige;
+}
+#map {
+  display: none;
+  position: absolute;
+  border-radius: 15px;
+  left: 5%;
+  top: 18%;
+  display: none;
+  padding: 5px;
+  height: 60%;
+  width: 90%;
+  background-color: beige;
+}
+
+#leftTab {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin-right: 1px;
+  height: 80%;
+  background-color: #e6e6e6;
+  text-align: center;
+}
+#leftTab #start {
+  display: flex;
+  justify-content: center;
+  font-size: x-large;
+}
+#leftTab .month {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 4rem;
+  background-color: #c3c0bf;
+  color: aliceblue;
+  font-size: 2rem;
+  font-weight: bolder;
+}
+#leftTab .input {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 2.5rem;
+  font-weight: bold;
+}
+#leftTab .info,
+#message {
+  margin: 0.5rem 0.2rem;
+  font-size: large;
+  font-weight: bold;
+}
+#leftTab input {
+  width: 45px;
+  height: 40px;
+  border-radius: 5px;
+  border: none;
+  font-size: large;
+  font-weight: bold;
+  text-align: center;
+}
+#leftTab button {
+  border: none;
+  color: aliceblue;
+  font-size: 1.5rem;
+  background-color: #c3c0bf;
+  cursor: pointer;
+  align-items: center;
+  margin: auto;
+  border-radius: 5px;
+}
+#leftTab button:active {
+  transform: scale(0.9);
+}
+#leftTab button:hover {
+  transform: scale(1.1);
+}
+#leftTab td {
+  cursor: pointer;
+}
+#leftTab td:hover {
+  transform: scale(1.2);
+  color: white;
+}
+#leftTab .order {
+  display: block;
+  justify-content: center;
+}
+@media screen and (orientation: portrait) {
+  .bg {
+    width: 100%;
+  }
+  .tb {
+    background-color: beige;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    top: 2%;
+    left: 2%;
+    right: 10px;
+    width: 95%;
+    height: 100px;
+    opacity: 0.8;
+    z-index: 5;
+  }
+  .tb button {
+    width: 20%;
+    height: 100%;
+    margin: auto;
+    font-size: 18px;
+    font-weight: 500;
+  }
+  .ft {
+    margin-left: 0;
+    width: 96%;
+  }
+  #terms {
+    font-size: larger;
+    padding-left: 20px;
+  }
+}
+#leftTab {
+  display: none;
+}
