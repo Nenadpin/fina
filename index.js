@@ -7,7 +7,7 @@ const res = document.getElementById("leftTab");
 const homeDisplay = document.getElementById("home");
 const descDisplay = document.getElementById("descDisplay");
 const flag = document.getElementsByClassName("flag");
-
+let lang = "en";
 const months = [
   { name: "Januar", noDays: 31, mon: 1 },
   { name: "Februar", noDays: 28, mon: 2 },
@@ -193,6 +193,26 @@ Features:<br>
 - Pet friendly<br>
 <br><br>
 Check-in from 14:00, check-out until 11:00`;
+const termsSer = `Opis smestaja: <br><br>
+Apartman sa jednom spavacom sobom. 50m2 strukture:<br>
+- Dnevna soba<br>
+- Spavaca soba<br>
+- Kuhinja<br>
+- Kupatilo<br>
+- Terasa<br>
+Maksimalno 4 osoba (francuski lezaj garnitura na izvlacenje).<br><br>
+
+Cene:<br>
+- 2 osobe = 25eur<br>
+- 3 osobe = 30eur<br>
+- 4 osobe = 35eur<br>
+<br>
+Dostupno:<br>
+- Wifi<br>
+- Parking<br>
+- Dozvoljeni kucni ljubimci<br>
+<br><br>
+Prijavljivanje od 14:00, odjavljivanje do 11:00`;
 const english = descDisplay.innerHTML;
 const serbian = `<strong>Opis:</strong><br><br>FINA apartman ima sve karakteristike porodicnog doma
 uz punu privatnost gostiju.<br>Nalazi se na spratu porodicne kuce sa posebnim ulazom za goste.
@@ -232,6 +252,8 @@ function galery() {
 }
 function home() {
   homeDisplay.style = "display: block";
+  if (lang === "en") descDisplay.innerHTML = english;
+  else descDisplay.innerHTML = serbian;
   image[0].style = "display:none";
   mapa.style = "display: none";
   ft.style = "display: none";
@@ -249,7 +271,8 @@ function contact() {
 }
 function termsDisplay() {
   desc.style = "display: block";
-  desc.innerHTML = terms;
+  if (lang === "en") desc.innerHTML = terms;
+  else desc.innerHTML = termsSer;
   image[0].style = "display:none";
   mapa.style = "display: none";
   ft.style = "display: none";
@@ -264,10 +287,24 @@ function reserve() {
   homeDisplay.style = "display: none";
 }
 function serbDesc() {
+  lang = "ser";
+  desc.innerHTML = termsSer;
   descDisplay.innerHTML = serbian;
+  document.getElementById("btnHome").innerText = "Opis";
+  document.getElementById("btnReserve").innerText = "Zakupi";
+  document.getElementById("btnGalery").innerText = "Slike";
+  document.getElementById("btnTerms").innerText = "Uslovi";
+  document.getElementById("btnContact").innerText = "Kontakt";
 }
 function engDesc() {
+  lang = "en";
+  desc.innerHTML = terms;
   descDisplay.innerHTML = english;
+  document.getElementById("btnHome").innerText = "Home";
+  document.getElementById("btnReserve").innerText = "Reserve";
+  document.getElementById("btnGalery").innerText = "Galery";
+  document.getElementById("btnTerms").innerText = "Terms";
+  document.getElementById("btnContact").innerText = "Contact";
 }
 
 function ch(x) {

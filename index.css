@@ -14,6 +14,13 @@ a {
   width: 100%;
   height: 100vh;
 }
+#flag {
+  position: absolute;
+  transform: scale(1.5);
+  left: 40%;
+  top: 80px;
+  z-index: 8;
+}
 span {
   margin: 0 15px;
 }
@@ -101,7 +108,8 @@ span {
   cursor: pointer;
 }
 #home {
-  font-family: cursive;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
   display: block;
 }
 #terms,
@@ -203,6 +211,10 @@ span {
   .bg {
     width: 100%;
   }
+  #flag {
+    left: 10%;
+    top: 13%;
+  }
   .tb {
     background-color: beige;
     position: absolute;
@@ -213,16 +225,23 @@ span {
     left: 2%;
     right: 10px;
     width: 95%;
-    height: 80px;
+    height: 10%;
     opacity: 0.8;
     z-index: 5;
   }
-  .tb button {
+  .tb > button {
     width: 20%;
     height: 100%;
     margin: auto;
     font-size: 18px;
     font-weight: 500;
+  }
+  .galery,
+  #terms,
+  #home,
+  #leftTab,
+  #map {
+    top: 16%;
   }
   .ft {
     margin-left: 0;
