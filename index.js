@@ -174,6 +174,8 @@ const order = () => {
 };
 
 ft.style = "display: none";
+document.getElementById("left").style = "display: none";
+document.getElementById("right").style = "display: none";
 const terms = `Property description: <br><br>
 One bedroom apartment with approx. 50m2 following structure:<br>
 - Living toom<br>
@@ -244,6 +246,8 @@ let slide = setInterval(() => {
 }, 3000);
 
 function galery() {
+  document.getElementById("left").style = "display: block";
+  document.getElementById("right").style = "display: block";
   mapa.style = "display: none";
   ft.style = "display: none";
   image[0].style = "display: block";
@@ -254,6 +258,8 @@ function galery() {
 function home() {
   if (active) {
     homeDisplay.style = "display: none";
+    document.getElementById("left").style = "display: none";
+    document.getElementById("right").style = "display: none";
     active = false;
   } else {
     homeDisplay.style = "display: block";
