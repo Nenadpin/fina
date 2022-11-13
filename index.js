@@ -4,6 +4,9 @@ const mapa = document.getElementById("map");
 const ft = document.getElementById("ft");
 const desc = document.getElementById("terms");
 const res = document.getElementById("leftTab");
+const homeDisplay = document.getElementById("home");
+const descDisplay = document.getElementById("descDisplay");
+const flag = document.getElementsByClassName("flag");
 
 const months = [
   { name: "Januar", noDays: 31, mon: 1 },
@@ -190,6 +193,26 @@ Features:<br>
 - Pet friendly<br>
 <br><br>
 Check-in from 14:00, check-out until 11:00`;
+const english = descDisplay.innerHTML;
+const serbian = `<strong>Opis:</strong><br><br>FINA apartman ima sve karakteristike porodicnog doma
+uz punu privatnost gostiju.<br>Nalazi se na spratu porodicne kuce sa posebnim ulazom za goste.
+<br>Prostrani apartman ima 50m2, veliku dnevnu sobu, spavacu sobu, potpuno opremljenu kuhinju i 
+kupatilo.<br>Najlepsi deo objekta je velika osuncana terasa na istocnoj strani sa pogledom na 
+vrt i mirnu ulicu.<br>U neposrednoj blizini se nalaze veliki marketi (IDEA, Zlatan Trag, Aman)
+, lokalna pekara, apoteka i zelena pijaca.
+<br>Posebno se vodi racuna o potrebama dece. Obezbedjujemo krevetac za malu decu, igracke, 
+a u dvoristu postoji poseban deciji kutak sa kucicom na drvetu, toboganom, ljuljaskom i 
+drugim decijim mobilijarom koji gosti mogu slobodno koristiti.
+<br><br><strong>Okolina:</strong><br><br>Iako je apartman smesten van samog centra grada, 
+do centra se stize laganom setnjom od 10 minuta. 
+Prednost ove lokacije je sto je objekat izdvojen od gradske guzve a nedaleko je od svih 
+sadrzaja. <br>Na 1km od apartmana je brdo Hisar i Park 9 Jugovica, koji pruzaju sve uslove 
+rekreacije u prirodi. Na 20-tak km (15min voznje autom) je istorijski lokalitet Caricin Grad. 
+Put nastavlja jos 20km do Radan Planine, jedne od netaknutih lepota Juzne Srbije. 
+Podno Radan planine je Brestovacko jezero, prelepo mesto za izletnike i pecarose.
+<br><br><strong>Domacini:</strong><br><br>Domacini su ozbiljni ljudi koji su stalno prisutni kada 
+je potrebna pomoc ili savet, a neprimetni kada je gostima potrebna privatnost. <br>
+Trudimo se da izadjemo u susret svim vasim zeljama u sklopu mogucnosti.`;
 
 let i = 1,
   j = 1;
@@ -203,11 +226,12 @@ function galery() {
   mapa.style = "display: none";
   ft.style = "display: none";
   image[0].style = "display: block";
-  image[0].src = "2.jpg";
   desc.style = "display: none";
   res.style = "display: none";
+  homeDisplay.style = "display: none";
 }
 function home() {
+  homeDisplay.style = "display: block";
   image[0].style = "display:none";
   mapa.style = "display: none";
   ft.style = "display: none";
@@ -221,6 +245,7 @@ function contact() {
   ft.style = "flex-direction: row";
   desc.style = "display: none";
   res.style = "display: none";
+  homeDisplay.style = "display: none";
 }
 function termsDisplay() {
   desc.style = "display: block";
@@ -229,15 +254,25 @@ function termsDisplay() {
   mapa.style = "display: none";
   ft.style = "display: none";
   res.style = "display: none";
+  homeDisplay.style = "display: none";
 }
 function reserve() {
   res.style = "display: block";
   image[0].style = "display:none";
   mapa.style = "display: none";
   ft.style = "display: none";
+  homeDisplay.style = "display: none";
 }
-function ch() {
-  j += 1;
-  if (j > 17) j = 1;
+function serbDesc() {
+  descDisplay.innerHTML = serbian;
+}
+function engDesc() {
+  descDisplay.innerHTML = english;
+}
+
+function ch(x) {
+  let j = parseInt(image[0].src.substr(-5)) + x;
+  if (j === 0) j = 17;
+  if (j === 18) j = 1;
   image[0].src = `${j}.jpg`;
 }

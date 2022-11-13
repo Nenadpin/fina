@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link type="image/png" sizes="32x32" rel="icon" href="icons8-bed-32.png">
+    <title>FINA apartment</title>
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
@@ -17,12 +18,38 @@
         <button onclick="contact()">Contact</button>
       </div>
       <div class="bg">
-        <img onclick="ch()" class="galery" src="" alt="" />
+        <img class="galery" src="2.jpg" alt="" />
+        <button onclick="ch(-1)" id="left">&#60</button>
+        <button onclick="ch(1)" id="right">&#62</button>
         <img id="carousell" src="1.jpg" />
         <div id="map">
             <iframe width="100%" height="100%" src="https://maps.google.com/maps?q=leskovac%20fina%20apartment&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
         </div>
         <div id="terms"></div>
+        <div id="home">
+          <img onclick="serbDesc()" class="flag" src="serbia.png"/>
+          <img onclick="engDesc()" class="flag" src="britain-16.png"/>
+          <div id="descDisplay">
+         <strong>Description:</strong><br><br>
+
+          The FINA apartment has all the characteristics of a family home with full privacy for the guests.<br>
+          It is located on the first floor of a family house with a separate entrance for guests.<br>
+          The spacious apartment has 50m2, a large living room, a bedroom, a fully equipped kitchen and a bathroom.<br>
+          The most beautiful part of the building is the large sunny terrace on the east side with a view of the garden and a quiet street.<br>
+          In the immediate vicinity there are large markets (IDEA, Zlatan Trag, Aman), a local bakery, a pharmacy and a green market.
+          <br>Special attention is paid to the needs of children. We provide a cot for small children, toys, and in the yard there is a special children's corner with a tree house, slide, swing and other children's furniture that guests can freely use.<br><br>
+          
+          <strong>The environment:</strong><br><br>
+          
+          Although the apartment is located outside the city center, the center can be reached by easy 10-minute walk. The advantage of this location is that the building is separated from the city crowd and is not far from all amenities.
+          <br>1 km from the apartment is Hisar hill and Park 9 Jugovica, which offer all the conditions for recreation in nature. <br>About 20 km away (15 minutes by car) is the historical site of Tsaritsin Grad. <br>The road continues for another 20 km to Radan Mountain, one of the untouched beauties of Southern Serbia. At the foot of the Radan mountain is Brestovac Lake, a beautiful place for hikers and fishermen.<br><br>
+          
+          <strong>Hosts:</strong><br><br>
+          
+          Hosts are serious people who are always present when help or advice is needed, and invisible when guests need privacy.<br>
+          We try to meet all your wishes as much as possible.
+        </div>
+        </div>
         <div id="leftTab">
           <p style="font-family: cursive; margin: 0.5rem 0.2rem; font-size: larger;letter-spacing: 0.2rem;">Rezervacija</p>
           <hr style="width: 100%;margin-top: 0;">

@@ -21,6 +21,25 @@ span {
   width: 67%;
   position: relative;
 }
+.bg > button {
+  position: absolute;
+  top: 50%;
+  height: 50px;
+  width: 10px;
+  border: none;
+  font-size: xx-large;
+  background-color: transparent;
+  cursor: pointer;
+}
+.bg > button:hover {
+  color: beige;
+}
+.bg > button#left {
+  left: 8%;
+}
+.bg > button#right {
+  right: 10%;
+}
 .tb {
   width: 33%;
   display: flex;
@@ -64,7 +83,8 @@ span {
 }
 .galery,
 #terms,
-#leftTab {
+#leftTab,
+#home {
   position: absolute;
   border-radius: 15px;
   font-size: large;
@@ -76,6 +96,20 @@ span {
   height: 80%;
   width: 90%;
   background-color: beige;
+}
+.flag {
+  cursor: pointer;
+}
+#home {
+  font-family: cursive;
+  display: block;
+}
+#terms,
+#home {
+  overflow-y: auto;
+}
+::-webkit-scrollbar {
+  margin: -15px;
 }
 #map {
   display: none;
@@ -179,7 +213,7 @@ span {
     left: 2%;
     right: 10px;
     width: 95%;
-    height: 100px;
+    height: 80px;
     opacity: 0.8;
     z-index: 5;
   }
