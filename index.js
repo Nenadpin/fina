@@ -8,6 +8,7 @@ const homeDisplay = document.getElementById("home");
 const descDisplay = document.getElementById("descDisplay");
 const flag = document.getElementsByClassName("flag");
 let lang = "en";
+let active = false;
 const months = [
   { name: "Januar", noDays: 31, mon: 1 },
   { name: "Februar", noDays: 28, mon: 2 },
@@ -251,7 +252,13 @@ function galery() {
   homeDisplay.style = "display: none";
 }
 function home() {
-  homeDisplay.style = "display: block";
+  if (active) {
+    homeDisplay.style = "display: none";
+    active = false;
+  } else {
+    homeDisplay.style = "display: block";
+    active = true;
+  }
   if (lang === "en") descDisplay.innerHTML = english;
   else descDisplay.innerHTML = serbian;
   image[0].style = "display:none";
