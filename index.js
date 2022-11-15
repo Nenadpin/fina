@@ -67,7 +67,8 @@ document.getElementById("no").addEventListener("change", () => {
 const populateTable = () => {
   const days = months[d.getMonth()].noDays;
   const firstDay = new Date(d.getFullYear(), d.getMonth(), 1);
-  const startOfWeek = firstDay.getDay();
+  let startOfWeek = firstDay.getDay();
+  if (startOfWeek === 0) startOfWeek = 7;
 
   document.getElementById("month").innerHTML = months[d.getMonth()].name;
 
@@ -94,11 +95,13 @@ const populateTable = () => {
 populateTable();
 
 const prevMonth = () => {
-  d = new Date(2022, d.getMonth() - 1, now.day);
+  if (d.getMonth() === 0) d = new Date(d.getFullYear() - 1, 11, now.day);
+  else d = new Date(d.getFullYear(), d.getMonth() - 1, now.day);
   populateTable();
 };
 const nextMonth = () => {
-  d = new Date(2022, d.getMonth() + 1, now.day);
+  if (d.getMonth() === 11) d = new Date(d.getFullYear() + 1, 0, now.day);
+  else d = new Date(d.getFullYear(), d.getMonth() + 1, now.day);
   populateTable();
 };
 
