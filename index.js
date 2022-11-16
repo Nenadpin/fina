@@ -173,7 +173,6 @@ const order = () => {
   if (startDate && endDate) {
     for (let d = 0; d < closed.length; d++) {
       let closedDate = new Date(closed[d]);
-      console.log(closedDate);
       if (startDate <= closedDate <= endDate) {
         alert("Apartman je zauzet u zeljenom periodu!");
         resetReservation();
