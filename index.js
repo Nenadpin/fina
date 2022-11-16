@@ -118,7 +118,7 @@ const nextMonth = () => {
 const setDate = (e) => {
   if (!startDate && !endDate) {
     startDate = new Date(
-      2022,
+      d.getFullYear(),
       d.getMonth(),
       document.getElementById(e).innerText
     );
@@ -135,17 +135,17 @@ const setDate = (e) => {
       "startReserve"
     ).innerHTML = `${startDate.getDate()}-${
       months[startDate.getMonth()].mon
-    }-2022`;
+    }-${startDate.getFullYear()}`;
   } else {
     endDate = new Date(
-      2022,
+      d.getFullYear(),
       d.getMonth(),
       document.getElementById(e).innerText
     );
     if (endDate > startDate) {
       document.getElementById("endReserve").innerHTML = `${endDate.getDate()}-${
         months[startDate.getMonth()].mon
-      }-2022`;
+      }-${endDate.getFullYear()}`;
       document.getElementById("message").innerText = `Rezervisali ste za ${
         endDate.getDate() - startDate.getDate()
       } dana`;
