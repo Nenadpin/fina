@@ -7,6 +7,7 @@ const res = document.getElementById("leftTab");
 const homeDisplay = document.getElementById("home");
 const descDisplay = document.getElementById("descDisplay");
 const flag = document.getElementsByClassName("flag");
+ft.style = "display: none";
 let lang = "en";
 let active = false;
 const months = [
@@ -23,6 +24,15 @@ const months = [
   { name: "Novembar", noDays: 30, mon: 11 },
   { name: "Decembar", noDays: 31, mon: 12 },
 ];
+
+const fileUrl = "./reserved.txt";
+
+let closed = [];
+fetch(fileUrl)
+  .then((r) => r.text())
+  .then((t) => {
+    closed = t.split("\n");
+  });
 
 let d = new Date();
 let startDate = null;
@@ -112,7 +122,6 @@ const setDate = (e) => {
       d.getMonth(),
       document.getElementById(e).innerText
     );
-    console.log(e);
     if (
       startDate > now.today ||
       (startDate.getDate() == now.day && startDate.getMonth() == now.month)
@@ -162,6 +171,15 @@ const resetReservation = () => {
 };
 const order = () => {
   if (startDate && endDate) {
+    for (let d = 0; d < closed.length; d++) {
+      let closedDate = new Date(closed[d]);
+      console.log(closedDate);
+      if (startDate <= closedDate <= endDate) {
+        alert("Apartman je zauzet u zeljenom periodu!");
+        resetReservation();
+        return;
+      }
+    }
     document.getElementById(
       "mail"
     ).href += `Zeleo bih da rezervisem vas apartman na period od ${startDate.getDate()} ${
@@ -176,7 +194,6 @@ const order = () => {
   }
 };
 
-ft.style = "display: none";
 document.getElementById("left").style = "display: none";
 document.getElementById("right").style = "display: none";
 const terms = `Property description: <br><br>
