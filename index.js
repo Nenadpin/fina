@@ -135,7 +135,7 @@ const setDate = (e) => {
       "startReserve"
     ).innerHTML = `${startDate.getDate()}-${
       months[startDate.getMonth()].mon
-    }-${startDate.getFullYear()}`;
+    }-2022`;
   } else {
     endDate = new Date(
       d.getFullYear(),
@@ -145,7 +145,7 @@ const setDate = (e) => {
     if (endDate > startDate) {
       document.getElementById("endReserve").innerHTML = `${endDate.getDate()}-${
         months[startDate.getMonth()].mon
-      }-${endDate.getFullYear()}`;
+      }-2022`;
       document.getElementById("message").innerText = `Rezervisali ste za ${
         endDate.getDate() - startDate.getDate()
       } dana`;
